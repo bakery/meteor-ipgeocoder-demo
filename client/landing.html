@@ -1,0 +1,35 @@
+<template name="landing">
+  <div class="column" style="padding-left:10em;">
+  	<h3 class="ui header">
+  	Demo of IPGeocoder Meteor Package
+	</h3>
+	<p>This is a quick demo of IP geocoding using <a href="http://thebakeryio.github.io/meteor-ipgeocoder/">ipgeocoder package</a> for Meteor. The package is available on <a href="https://atmospherejs.com/thebakery/ipgeocoder">Atmosphere</a></p>
+  </div>
+  <div class="column">
+  	{{#if locationData}}
+	  {{#with locationData}}
+			<div class="card ui centered animated fadeInUp">
+				<div class="image">
+					<img src="{{flagUrl data.country.code}}">
+				</div>
+				<div class="content" style="text-align:left;">
+					<div class="header">{{data.country.name}}</div>
+					<div class="meta">
+						<span class="date">{{data.city.name}}</span>
+					</div>
+					<div class="description">{{{hello data.country.code}}}</div>
+				</div>
+				<div class="extra content" style="text-align:left;">
+					<span class="right floated">
+					{{ip}}
+					</span>
+					<span>
+					<i class="marker icon"></i>
+					{{locationCoords data.location}}
+					</span>
+				</div>
+			</div>
+	  {{/with}}
+	{{/if}}
+  </div>
+</template>

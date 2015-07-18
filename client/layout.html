@@ -1,0 +1,14 @@
+<template name="layout">
+	<div class="ui secondary pointing menu">
+	  <a href="/" class="item {{isActivePath '/'}}">Your IP</a>
+	  <a href="/77.49.67.150" class="item {{isActivePath '/77.49.67.150'}}">Athens</a>
+	  <a href="/218.107.132.66" class="item {{isActivePath '/218.107.132.66'}}">Beijing</a>
+	  <a href="/81.169.145.154" class="item {{isActivePath '/81.169.145.154'}}">Berlin</a>
+	  <a href="/195.26.64.211" class="item {{isActivePath '/195.26.64.211'}}">Kiev</a>
+	  <a href="/213.199.154.23" class="item {{isActivePath '/213.199.154.23'}}">London</a>
+	  <a href="/81.194.41.248" class="item {{isActivePath '/81.194.41.248'}}">Paris</a>
+	</div>
+	<div class="ui two column centered grid horizontally padded middle" style="margin-top:3em;">
+		{{>yield}}
+	</div>
+</template>
