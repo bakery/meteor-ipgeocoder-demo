@@ -3,9 +3,8 @@ var locationData = new ReactiveVar(null);
 Template.landing.onCreated(function(){
 	this.autorun(function(){
 		var currentRoute = Router.current();
-		var ip = currentRoute.params.ip || '82.124.236.10';
 		locationData.set(null);
-		$.getJSON('http://localhost:3000/geocode/' + ip, function(data){ 
+		$.getJSON('/geocode/' + currentRoute.params.ip || '', function(data){ 
 			locationData.set(data);
 		});
 	});
